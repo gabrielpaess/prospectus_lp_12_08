@@ -219,6 +219,122 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Animações para nuvens deslizantes */
+@keyframes slideClouds {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@-webkit-keyframes slideClouds {
+  0% {
+    -webkit-background-position: 0% 50%;
+  }
+  100% {
+    -webkit-background-position: 100% 50%;
+  }
+}
+
+/* Classes para as camadas de nuvens */
+.cloud-layer-1 {
+  background-image: url('/nuvem_2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  animation: slideClouds 20s linear infinite;
+  opacity: 0.50;
+}
+
+.cloud-layer-2 {
+  background-image: url('/nuvem.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  animation: slideClouds 20s linear infinite;
+  opacity: 0.50;
+}
+
+/* Classe específica para a seção de dados reais */
+.section-17-clouds .cloud-layer-1{
+  will-change: background-position;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+
+/* Classe para seção 18 com nuvens */
+.section-18-clouds .cloud-layer-2 {
+  will-change: background-position;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Classe para seção 20 unificada com nuvem deslizante */
+.section-20-unified .cloud-layer-1 {
+  will-change: background-position;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  opacity: 0.25;
+}
+
+/* Estilos para scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Melhorias para o botão de scroll */
+.scroll-button-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-button-hover:hover {
+  transform: translateY(2px);
+  filter: brightness(1.1);
+}
+
+/* Efeito de iluminação azul para o botão */
+.scroll-button-glow {
+  position: relative;
+}
+
+.scroll-button-glow::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  background: radial-gradient(ellipse at center, rgba(60, 120, 255, 0.4) 0%, rgba(60, 120, 255, 0.2) 40%, rgba(60, 120, 255, 0.1) 70%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.scroll-button-glow:hover::before {
+  opacity: 1;
+}
+
+/* Animação de bounce personalizada para o botão */
+@keyframes custom-bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.animate-custom-bounce {
+  animation: custom-bounce 2s infinite;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;

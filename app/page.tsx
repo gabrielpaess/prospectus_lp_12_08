@@ -1,4 +1,4 @@
-import CustomChevronIcon from "../components/CustomChevronIcon";
+import ScrollDownButton from "../components/ScrollDownButton";
 import TypewriterText from '../components/TypewriterText';
 import ReactBitsScrollReveal from '../components/ReactBitsScrollReveal';
 import ReactBitsStaggeredScrollReveal from '../components/ReactBitsStaggeredScrollReveal';
@@ -6,12 +6,13 @@ import Cursor3DLens from '../components/Cursor3DLens';
 
 import ShinyText from '../components/ShinyText';
 import StarBorder from '../components/StarBorder';
+import MusicWidget from "@/components/MusicWidget";
 
 export default function ProspectusLanding() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" suppressHydrationWarning>
       {/* Hero Section */}
-      <section className="min-h-screen relative hero-bg flex items-center justify-center">
+      <section id="hero-section" className="min-h-screen relative hero-bg flex items-center justify-center">
         {/* Logo Container - Centralizado */}
         <div className="text-center z-10">
           <img
@@ -23,10 +24,11 @@ export default function ProspectusLanding() {
 
         {/* Scroll Button - Posicionado abaixo da logo */}
         <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center z-10">
-          <div className="flex flex-col items-center space-y-4">
-            <p className="text-sm md:text-base text-gray-400 tracking-wider font-archivo">ROLE PARA BAIXO</p>
-            <CustomChevronIcon size={32} animate={true} />
-          </div>
+          <ScrollDownButton 
+            size={32} 
+            targetSection="section-2"
+            iconType="heroicon"
+          />
         </div>
 
         {/* Gradient Overlay - Preto bottom para cor da imagem */}
@@ -34,9 +36,9 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 2 */}
-      <section className="min-h-screen flex items-center justify-center bg-black">
+      <section id="section-2" className="min-h-screen flex items-center justify-center bg-black">
         <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#1428a4] px-8 font-venus">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#055ec4] px-8 font-venus">
             <TypewriterText
               text="[SUA EMPRESA NÃO PRECISA DE MAIS ESFORÇO]"
               speed={80}
@@ -48,7 +50,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 3 */}
-      <section className="min-h-screen flex items-center justify-center bg-black">
+      <section id="section-3" className="min-h-screen flex items-center justify-center bg-black">
         <div className="text-center">
           <ReactBitsStaggeredScrollReveal
             baseOpacity={0}
@@ -71,21 +73,21 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 4 */}
-      <section className="min-h-screen flex items-center justify-center relative bg-black">
+      <section id="section-4" className="min-h-screen flex items-center justify-center relative bg-black">
 
         {/* Container principal com duas colunas */}
         <div className="relative z-10 flex w-full h-full">
 
           {/* Lado Esquerdo - Texto + Efeito Luz (50%) */}
-          <div className="w-full flex flex-col justify-center items-center">
+          <div className="w-full flex flex-col justify-start items-center">
             <div className="relative">
               <h2 className="text-3xl md:text-5xl font-regular text-[#055ec4] leading-none font-venus text-center">
                 SEU <br />
                 CRESCIMENTO <br />
                 NÃO ESTÁ <br />
-                <span className="bg-gradient-to-r from-white via-white to-[#055ec4] bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(to right, white 0%, white 5%, #055ec4 20%, #055ec4 100%)' }}>TRAVADO</span><br />
-                <span className="bg-gradient-to-r from-white via-white to-[#055ec4] bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(to right, white 0%, white 10%, #055ec4 40%, #055ec4 100%)' }}>POR FALTA</span><br />
-                <span className="bg-gradient-to-r from-white via-white to-[#055ec4] bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(to right, white 0%, white 10%, #055ec4 60%, #055ec4 100%)' }}>DE MERCADO</span>
+                TRAVADO<br />
+                POR FALTA<br />
+                DE MERCADO
               </h2>
 
               {/* Imagem de Efeito Luz posicionada abaixo do texto */}
@@ -114,9 +116,9 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 5 */}
-      <section className="min-h-screen flex items-center justify-center relative bg-black homem-cansado-bg">
+      <section id="section-5" className="min-h-screen flex items-center justify-center relative bg-black homem-cansado-bg">
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-center md:space-y-0 md:space-x-128 px-8">
-          <div className="text-center md:text-right">
+          <div className="text-center md:text-right -mt-8 md:-mt-18">
             <ReactBitsScrollReveal
               baseOpacity={0}
               enableBlur={true}
@@ -126,14 +128,14 @@ export default function ProspectusLanding() {
               delay={200}
               threshold={0.3}
             >
-              <h2 className="text-3xl md:text-4xl font-regular text-orange-500 leading-none font-venus text-start">
+              <h2 className="text-3xl md:text-5xl font-regular text-orange-500 leading-none font-venus text-start">
                 ESTÁ <br />
                 TRAVADO <br />
                 POR
               </h2>
             </ReactBitsScrollReveal>
           </div>
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left mt-8 md:mt-18">
             <ReactBitsScrollReveal
               baseOpacity={0}
               enableBlur={true}
@@ -143,7 +145,7 @@ export default function ProspectusLanding() {
               delay={400}
               threshold={0.3}
             >
-              <h2 className="text-3xl md:text-4xl font-regular text-[#e5c998] leading-none font-venus">
+              <h2 className="text-3xl md:text-5xl font-regular text-[#e5c998] leading-none font-venus">
                 FALTA <br />
                 DE VISÃO <br />
                 ESTRATÉGICA
@@ -159,7 +161,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 6 */}
-      <section className="min-h-screen flex items-center justify-center bg-black">
+      <section id="section-6" className="min-h-screen flex items-center justify-center bg-black">
         <div className="text-center">
           <h2 className="text-2xl md:text-4xl font-regular text-[#055ec4] leading-none px-8 font-venus animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
             animation: 'scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
@@ -172,7 +174,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 7 - Chart */}
-      <section className="min-h-screen flex flex-col items-center justify-center bg-black">
+      <section id="section-7" className="min-h-screen flex flex-col items-center justify-center bg-black">
         <div className="w-[90vw]">
           <div className="flex justify-between items-start mb-8">
             <span className="text-md md:text-xl text-orange-500 font-light font-archivo">{'[ '} Fragilidades {' ]'} </span>
@@ -427,7 +429,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 8 */}
-      <section className="min-h-screen flex items-center justify-center bg-black">
+      <section id="section-8" className="min-h-screen flex items-center justify-center bg-black">
         <div className="text-center">
           <h2 className="text-3xl md:text-3xl font-regular text-[#055ec4] font-venus">
             <TypewriterText
@@ -447,7 +449,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 9 - Ofertamos Transformação */}
-      <section
+      <section id="section-9"
         className="min-h-screen flex flex-col items-center justify-center relative bg-contain bg-top bg-no-repeat"
         style={{
           backgroundImage: `url('/man_world.png')`,
@@ -484,7 +486,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 10 - Central de Inteligência */}
-      <section
+      <section id="section-10"
         className="min-h-screen flex flex-col items-center justify-center relative bg-cover bg-center bg-no-repeat bg-[#055ec4]">
         <div className="text-center space-y-8">
           <h2 className="text-4xl md:text-8xl font-semibold text-black leading-[9vh] font-archivo animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
@@ -512,7 +514,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 11 - Aplicando o Undercut */}
-      <section className="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat overflow-hidden"
+      <section id="section-11" className="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{
           backgroundImage: `url('/grid_banner.png')`,
         }}>
@@ -534,7 +536,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 12 - Metodologia Fórmula 1 */}
-      <section
+      <section id="section-12"
         className="min-h-screen flex flex-col items-center justify-end relative bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/f1.png')`,
@@ -552,7 +554,11 @@ export default function ProspectusLanding() {
             VANTAGEM COMPETITIVA.
           </h2>
           <div className="flex flex-col items-center space-y-4 mt-16">
-            <CustomChevronIcon size={32} animate={true} />
+            <ScrollDownButton 
+              size={32} 
+              targetSection="section-13"
+              iconType="heroicon"
+            />
           </div>
         </div>
         {/* Gradient Overlay - Preto top para cor da imagem */}
@@ -563,7 +569,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 13 - Método em 5 Etapas */}
-      <section
+      <section id="section-13"
         className="min-h-screen flex flex-col items-center justify-center relative bg-cover bg-center bg-no-repeat py-48">
         <div className="absolute inset-0 bg-black/80"></div>
 
@@ -608,7 +614,13 @@ export default function ProspectusLanding() {
             <div className="flex-1 flex justify-center lg:justify-end">
               <div className="relative w-80 h-80">
                 {/* Círculo central - sol/núcleo */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full shadow-2xl z-20"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full shadow-2xl z-20 flex items-center justify-center">
+                  <img 
+                    src="/SOL_ICONE.png" 
+                    alt="Sol" 
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
 
                 {/* Órbitas concêntricas com linhas tracejadas */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/30 rounded-full border-dashed"></div>
@@ -619,37 +631,38 @@ export default function ProspectusLanding() {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   {/* Ícone 1 - órbita externa - Estratégia */}
                   <div className="absolute w-8 h-8 bg-transparent border-2 border-orange-500 rounded-full flex items-center justify-center shadow-lg animate-orbit-1">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                    <img 
+                      src="/ESTACAO_CONTROLE.png" 
+                      alt="Estratégia" 
+                      className="w-4 h-4 object-contain"
+                    />
                   </div>
 
                   {/* Ícone 2 - órbita média - Crescimento */}
                   <div className="absolute w-8 h-8 bg-transparent border-2 border-orange-500 rounded-full flex items-center justify-center shadow-lg animate-orbit-2">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
+                    <img 
+                      src="/NOTE_FOGUETE.png" 
+                      alt="Crescimento" 
+                      className="w-4 h-4 object-contain"
+                    />
                   </div>
 
                   {/* Ícone 3 - órbita interna - Inovação */}
                   <div className="absolute w-8 h-8 bg-transparent border-2 border-orange-500 rounded-full flex items-center justify-center shadow-lg animate-orbit-3">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
+                    <img 
+                      src="/SATELITE.png" 
+                      alt="Inovação" 
+                      className="w-4 h-4 object-contain"
+                    />
                   </div>
 
                   {/* Ícone 4 - órbita externa direita - Networking */}
                   <div className="absolute w-8 h-8 bg-transparent border-2 border-orange-500 rounded-full flex items-center justify-center shadow-lg animate-orbit-4">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
-                    </svg>
-                  </div>
-
-                  {/* Ícone 5 - órbita média direita - Resultados */}
-                  <div className="absolute w-8 h-8 bg-transparent border-2 border-orange-500 rounded-full flex items-center justify-center shadow-lg animate-orbit-5">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
+                    <img 
+                      src="/CARRO_ESPACIAL.png" 
+                      alt="Networking" 
+                      className="w-4 h-4 object-contain"
+                    />
                   </div>
                 </div>
               </div>
@@ -666,15 +679,22 @@ export default function ProspectusLanding() {
           {/* Grid de 5 caixas de conteúdo */}
           <div className="mt-2 grid grid-cols-4 gap-2">
             {/* Caixa 1 - PLANEJAMENTO ESTRATÉGICO */}
-            <div className="relative h-98 border border-white bg-cover bg-center overflow-hidden transition-all duration-300 ease-in-out hover:border-orange-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-[1.02] cursor-pointer">
+            <div 
+              className="relative h-98 border border-white bg-cover bg-center overflow-hidden transition-all duration-300 ease-in-out hover:border-orange-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-[1.02] cursor-pointer"
+              style={{
+                backgroundImage: `url('/city.jpg')`
+              }}
+            >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
               <div className="relative z-10 p-6 h-full flex flex-col justify-between">
                 <div className="flex-1"></div>
                 <div className="flex flex-col items-start space-y-3">
                   <div className="flex justify-start">
-                    <svg className="w-6 h-6 text-orange-500 transition-colors duration-300 group-hover:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                    <img 
+                      src="/SOL_ICONE.png" 
+                      alt="Planejamento Estratégico" 
+                      className="w-6 h-6 object-contain"
+                    />
                   </div>
                   <div className="text-white font-regular text-sm font-venus uppercase tracking-wide">
                     PLANEJAMENTO ESTRATÉGICO →
@@ -697,9 +717,11 @@ export default function ProspectusLanding() {
                 <div className="flex-1"></div>
                 <div className="flex flex-col items-start space-y-3">
                   <div className="flex justify-start">
-                    <svg className="w-6 h-6 text-orange-500 transition-colors duration-300 group-hover:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-                    </svg>
+                    <img 
+                      src="/NOTE_FOGUETE.png" 
+                      alt="Estruturas Digitais" 
+                      className="w-6 h-6 object-contain"
+                    />
                   </div>
                   <div className="text-white font-regular text-sm font-venus uppercase tracking-wide">
                     ESTRUTURAS DIGITAIS →
@@ -709,16 +731,22 @@ export default function ProspectusLanding() {
             </div>
 
             {/* Caixa 3 - COMUNICAÇÃO INTEGRADA */}
-            <div className="relative h-98 border border-white bg-cover bg-center overflow-hidden transition-all duration-300 ease-in-out hover:border-orange-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-[1.02] cursor-pointer">
+            <div 
+              className="relative h-98 border border-white bg-cover bg-center overflow-hidden transition-all duration-300 ease-in-out hover:border-orange-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-[1.02] cursor-pointer"
+              style={{
+                backgroundImage: `url('/space-x.jpg')`
+              }}
+            >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
               <div className="relative z-10 p-6 h-full flex flex-col justify-between">
                 <div className="flex-1"></div>
                 <div className="flex flex-col items-start space-y-3">
                   <div className="flex justify-start">
-                    <svg className="w-6 h-6 text-orange-500 transition-colors duration-300 group-hover:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-                      <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
-                    </svg>
+                    <img 
+                      src="/SATELITE.png" 
+                      alt="Comunicação Integrada" 
+                      className="w-6 h-6 object-contain"
+                    />
                   </div>
                   <div className="text-white font-regular text-sm font-venus uppercase tracking-wide">
                     COMUNICAÇÃO INTEGRADA →
@@ -743,9 +771,11 @@ export default function ProspectusLanding() {
                   <div className="flex-1"></div>
                   <div className="flex flex-col items-start space-y-3">
                     <div className="flex justify-start">
-                      <svg className="w-6 h-6 text-orange-500 transition-colors duration-300 group-hover:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
-                      </svg>
+                      <img 
+                        src="/CARRO_ESPACIAL.png" 
+                        alt="Prospecção Qualificada" 
+                        className="w-6 h-6 object-contain"
+                      />
                     </div>
                     <div className="text-white font-regular text-sm font-venus uppercase tracking-wide">
                       PROSPECÇÃO QUALIFICADA →
@@ -760,9 +790,11 @@ export default function ProspectusLanding() {
                   <div className="flex-1"></div>
                   <div className="flex flex-col items-start space-y-3">
                     <div className="flex justify-start">
-                      <svg className="w-6 h-6 text-orange-500 transition-colors duration-300 group-hover:text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
+                      <img 
+                        src="/ESTACAO_CONTROLE.PNG" 
+                        alt="Inteligência de Mercado" 
+                        className="w-6 h-6 object-contain"
+                      />
                     </div>
                     <div className="text-white font-regular text-sm font-venus uppercase tracking-wide">
                       INTELIGÊNCIA DE MERCADO →
@@ -778,7 +810,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 14 - Airplane Window Background */}
-      <section
+      <section id="section-14"
         className="min-h-screen bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-G2ufTXhrzppY5hTtUbJBznj19YYy4N.png')`,
@@ -788,7 +820,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 15 - Benefícios do Undercut */}
-      <section className="min-h-screen flex flex-col items-center justify-center bg-black px-8">
+      <section id="section-15" className="min-h-screen flex flex-col items-center justify-center bg-black px-8">
         <div className="text-center space-y-8">
           <ReactBitsScrollReveal
             baseOpacity={0}
@@ -809,13 +841,17 @@ export default function ProspectusLanding() {
             </h2>
           </ReactBitsScrollReveal>
           <div className="flex flex-col items-center space-y-4 mt-16">
-            <CustomChevronIcon size={32} animate={true} />
+            <ScrollDownButton 
+              size={32} 
+              targetSection="section-16"
+              iconType="heroicon"
+            />
           </div>
         </div>
       </section>
 
       {/* Section 16 - Vendas Previsíveis */}
-      <section
+      <section id="section-16"
         className="min-h-screen flex items-center justify-start relative bg-[#085ecf] bg-center bg-no-repeat">
         <div className="relative z-10 text-center space-y-4 px-64">
           <h2 className="text-4xl md:text-8xl font-semibold text-[#e5c999] leading-none font-archivo text-start tracking-tight animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
@@ -834,8 +870,11 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 17 - Dados Reais */}
-      <section
-        className="min-h-screen flex items-center justify-end relative bg-[#085ecf] bg-center bg-no-repeat">
+      <section id="section-17"
+        className="min-h-screen flex items-center justify-end relative bg-[#085ecf] bg-center bg-no-repeat overflow-hidden section-17-clouds">
+        {/* Background cloud image with sliding animation */}
+        <div className="absolute inset-0 z-0 cloud-layer-1" />
+        
         <div className="relative z-10 text-center space-y-8 px-64">
           <h2 className="text-4xl md:text-8xl font-semibold text-[#e5c999] leading-none font-archivo text-end tracking-tight animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
             animation: 'scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
@@ -851,11 +890,12 @@ export default function ProspectusLanding() {
             negócio
           </p>
         </div>
+        
       </section>
 
       {/* Section 18 - Inteligência para Posicionamento */}
-      <section
-        className="min-h-screen flex items-center justify-start relative bg-[#085ecf] bg-center bg-no-repeat">
+      <section id="section-18"
+        className="min-h-screen flex items-center justify-start relative bg-[#085ecf] bg-center bg-no-repeat overflow-hidden">
         <div className="relative z-10 text-center space-y-8 px-64">
           <h2 className="text-4xl md:text-8xl font-semibold text-[#e5c999] leading-none font-archivo text-start tracking-tight animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
             animation: 'scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
@@ -870,10 +910,12 @@ export default function ProspectusLanding() {
             competitiva real
           </p>
         </div>
+        
+        {/* Background cloud image with sliding animation at the end of section */}
       </section>
 
       {/* Section 19 - Processos Claros */}
-      <section
+      <section id="section-19"
         className="min-h-screen flex items-center justify-start relative bg-[#085ecf] bg-center bg-no-repeat">
         <div className="relative z-10 text-center space-y-8 px-72">
           <h2 className="text-4xl md:text-8xl font-semibold text-[#e5c999] leading-none font-archivo text-start tracking-tight animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
@@ -892,42 +934,48 @@ export default function ProspectusLanding() {
         </div>
       </section>
 
-      {/* Section 20 - Equipes Integradas */}
-      <section
-        className="min-h-screen flex items-center justify-end relative bg-[#085ecf] bg-center bg-no-repeat">
-        <div className="relative z-10 text-right space-y-8 px-78">
-          <h2 className="text-4xl md:text-8xl font-semibold text-[#e5c999] leading-none font-archivo tracking-tight animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
-            animation: 'scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-            transformOrigin: '50% 100%'
-          }}>
-            Equipes <br />
-            integradas <br />e com <br />
-            visão única
-          </h2>
-          <p className="text-lg md:text-xl text-white font-light font-medium mb-8 leading-none font-archivo tracking-tight">
-            Alinhamento real da <br />
-            equipe com a cultura <br />e visão da empresa
-          </p>
+      {/* Section 20 - Equipes Integradas + PNBN Logo (Unified with sliding nuvem effect) */}
+      <section id="section-20" className="min-h-screen relative bg-[#085ecf] overflow-hidden section-20-unified">
+        {/* Sliding nuvem background with movement effect */}
+        <div className="absolute inset-0 z-0 cloud-layer-2" />
+        
+        {/* Main content - Equipes Integradas */}
+        <div className="relative z-10 flex flex-col h-full">
+          {/* Top section - Equipes Integradas */}
+          <div className="flex-1 flex items-center justify-end px-78">
+            <div className="text-right space-y-8">
+              <h2 className="text-4xl md:text-8xl font-semibold text-[#e5c999] leading-none font-archivo tracking-tight animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
+                animation: 'scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+                transformOrigin: '50% 100%'
+              }}>
+                Equipes <br />
+                integradas <br />e com <br />
+                visão única
+              </h2>
+              <p className="text-lg md:text-xl text-white font-light font-medium mb-8 leading-none font-archivo tracking-tight">
+                Alinhamento real da <br />
+                equipe com a cultura <br />e visão da empresa
+              </p>
+            </div>
+          </div>
         </div>
-      </section>
-
-      {/* Section 21 - PNBN Logo */}
-      <section className="h-[14vh] relative flex items-center justify-center bg-[#085ecf]">
-
-        {/* Orange square with PNBN text - centered and bridging the sections */}
-        <div className="relative z-10 bg-orange-500 w-32 h-32 flex items-center justify-center">
-          <div className="flex items-center justify-center">
-            <img
-              src="/PROSPECTUS_SIGLA.png"
-              alt="PROSPECTUS Sigla"
-              className="w-auto h-5 object-contain"
-            />
+        
+        {/* PNBN Logo Bridge - positioned at the very bottom edge of the section */}
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/12 z-30">
+          <div className="bg-orange-500 w-32 h-32 flex items-center justify-center shadow-2xl">
+            <div className="flex items-center justify-center">
+              <img
+                src="/PROSPECTUS_SIGLA.png"
+                alt="PROSPECTUS Sigla"
+                className="w-auto h-6 object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Section 22 - Chega de Desperdiçar */}
-      <section
+      <section id="section-22"
         className="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 text-center">
@@ -952,7 +1000,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 22 - Imagem Celestial */}
-      <section
+      <section id="section-22"
         className="min-h-[60vh] relative bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/sol.png')`,
@@ -966,7 +1014,7 @@ export default function ProspectusLanding() {
       </section>
 
       {/* Section 23 - Final CTA */}
-      <section className="min-h-screen flex flex-col items-center justify-center relative bg-black">
+      <section id="section-23" className="min-h-screen flex flex-col items-center justify-center relative bg-black">
         <div className="relative z-10 text-center space-y-8 px-8">
           <h2 className="text-4xl md:text-8xl font-regular text-[#e5c998] leading-none font-venus animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
             animation: 'scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
@@ -986,8 +1034,11 @@ export default function ProspectusLanding() {
 
           <div className="py-8">
             <StarBorder
-              as="button"
-              className="custom-class"
+              as="a"
+              href={`https://wa.me/5551997766970?text=${encodeURIComponent('Olá. Quero saber mais sobre os serviços da Prospectus NBN.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="custom-class cursor-pointer"
               color="orange"
               speed="5s"
               thickness={2}
@@ -1008,6 +1059,12 @@ export default function ProspectusLanding() {
             </div>
         </div>
       </section>
+
+      {/* Music Widget */}
+      <MusicWidget 
+        audioSrc="/background-music.mp3" 
+        className="hidden md:block"
+      />
 
       {/* Cursor 3D - Sempre por último para ficar sobre tudo */}
       <Cursor3DLens

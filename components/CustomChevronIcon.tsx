@@ -6,12 +6,14 @@ interface CustomChevronIconProps {
   className?: string
   size?: number
   animate?: boolean
+  targetSection?: string
 }
 
 const CustomChevronIcon: FC<CustomChevronIconProps> = ({ 
   className = "", 
   size = 32,
-  animate = true 
+  animate = true,
+  targetSection
 }) => {
   const [isMounted, setIsMounted] = useState(false)
 
@@ -19,12 +21,26 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
     setIsMounted(true)
   }, [])
 
+  // Função para scroll suave para a próxima seção
+  const scrollToNextSection = () => {
+    if (targetSection) {
+      const element = document.getElementById(targetSection);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
+
   // Renderização inicial sem animação para evitar hidratação
   if (!isMounted) {
     return (
       <div 
-        className={`relative ${className}`}
+        className={`relative cursor-pointer transition-transform hover:scale-110 ${className}`}
         style={{ width: size, height: size * 1.4 }}
+        onClick={scrollToNextSection}
       >
         {/* Oval preto de fundo */}
         <div 
@@ -36,7 +52,7 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
           }}
         />
         
-        {/* Seta laranja */}
+        {/* Seta laranja apontando para baixo */}
         <div 
           className="absolute inset-0 flex items-center justify-center"
           style={{ padding: size * 0.15 }}
@@ -48,10 +64,10 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
             fill="none"
             className="drop-shadow-sm"
           >
-            {/* Seta principal laranja */}
+            {/* Seta principal laranja apontando para baixo */}
             <path 
-              d="M2 2L12 12L22 2" 
-              stroke="#ff6b35" 
+              d="M2 14L12 4L22 14" 
+              stroke="#f97316" 
               strokeWidth="3" 
               strokeLinecap="round" 
               strokeLinejoin="round"
@@ -60,8 +76,8 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
             
             {/* Seta interna para dar profundidade */}
             <path 
-              d="M4 4L12 10L20 4" 
-              stroke="#ff8c42" 
+              d="M4 12L12 6L20 12" 
+              stroke="#ea580c" 
               strokeWidth="2" 
               strokeLinecap="round" 
               strokeLinejoin="round"
@@ -70,11 +86,11 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
           </svg>
         </div>
         
-        {/* Brilho sutil no topo */}
+        {/* Brilho azul sutil no topo */}
         <div 
           className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-1/6 rounded-full"
           style={{
-            background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.15) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(59, 130, 246, 0.3) 0%, transparent 70%)',
             filter: 'blur(1px)'
           }}
         />
@@ -84,8 +100,9 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
 
   return (
     <div 
-      className={`relative ${animate ? 'animate-bounce' : ''} ${className}`}
+      className={`relative cursor-pointer transition-transform hover:scale-110 ${animate ? 'animate-bounce' : ''} ${className}`}
       style={{ width: size, height: size * 1.4 }}
+      onClick={scrollToNextSection}
     >
       {/* Oval preto de fundo */}
       <div 
@@ -97,7 +114,7 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
         }}
       />
       
-      {/* Seta laranja */}
+      {/* Seta laranja apontando para baixo */}
       <div 
         className="absolute inset-0 flex items-center justify-center"
         style={{ padding: size * 0.15 }}
@@ -109,10 +126,10 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
           fill="none"
           className="drop-shadow-sm"
         >
-          {/* Seta principal laranja */}
+          {/* Seta principal laranja apontando para baixo */}
           <path 
-            d="M2 2L12 12L22 2" 
-            stroke="#ff6b35" 
+            d="M2 14L12 4L22 14" 
+            stroke="#f97316" 
             strokeWidth="3" 
             strokeLinecap="round" 
             strokeLinejoin="round"
@@ -121,8 +138,8 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
           
           {/* Seta interna para dar profundidade */}
           <path 
-            d="M4 4L12 10L20 4" 
-            stroke="#ff8c42" 
+            d="M4 12L12 6L20 12" 
+            stroke="#ea580c" 
             strokeWidth="2" 
             strokeLinecap="round" 
             strokeLinejoin="round"
@@ -131,11 +148,11 @@ const CustomChevronIcon: FC<CustomChevronIconProps> = ({
         </svg>
       </div>
       
-      {/* Brilho sutil no topo */}
+      {/* Brilho azul sutil no topo */}
       <div 
         className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-1/6 rounded-full"
         style={{
-          background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(59, 130, 246, 0.3) 0%, transparent 70%)',
           filter: 'blur(1px)'
         }}
       />
