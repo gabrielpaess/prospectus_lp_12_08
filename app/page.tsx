@@ -811,9 +811,9 @@ export default function ProspectusLanding() {
 
       {/* Section 14 - Airplane Window Background */}
       <section id="section-14"
-        className="min-h-screen bg-cover bg-center bg-no-repeat"
+        className="min-h-screen bg-contain bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-G2ufTXhrzppY5hTtUbJBznj19YYy4N.webp')`,
+          backgroundImage: `url('/airplane_window.webp')`,
         }}
       >
         <div className="min-h-screen bg-black/40"></div>
