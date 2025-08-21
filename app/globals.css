@@ -26,7 +26,7 @@
 .hero-bg {
   background-image: 
     linear-gradient(to bottom, transparent 0%, transparent 45%, transparent 90%, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1) 100%),
-    url('/FUNDO_PNBN.png');
+    url('/FUNDO_PNBN.webp');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -34,7 +34,7 @@
 
 /* Homem cansado background */
 .homem-cansado-bg {
-  background-image: url('/homem_cansado.png');
+  background-image: url('/homem_cansado.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -240,7 +240,7 @@
 
 /* Classes para as camadas de nuvens */
 .cloud-layer-1 {
-  background-image: url('/nuvem_2.png');
+  background-image: url('/nuvem_2.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 0% 50%;
@@ -249,7 +249,7 @@
 }
 
 .cloud-layer-2 {
-  background-image: url('/nuvem.png');
+  background-image: url('/nuvem.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -285,55 +285,88 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Melhorias para o botão de scroll */
-.scroll-button-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Estilos específicos para o ScrollDownButton - evitando conflitos */
+.scroll-down-button {
+  /* Reset de estilos globais */
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  background: none;
+  border: none;
+  outline: none;
+  /* Garantir que sombras sejam visíveis */
+  filter: none;
+  transform: none;
+  /* Aplicar animação de flutuação para estimular o clique */
+  animation: float 3s ease-in-out infinite;
 }
 
-.scroll-button-hover:hover {
+.scroll-down-button * {
+  box-sizing: border-box;
+}
+
+/* Garantir que as sombras sejam visíveis */
+.scroll-down-button [data-container] {
+  /* Forçar visibilidade das sombras */
+  will-change: box-shadow;
+  backface-visibility: hidden;
+}
+
+/* Remover o pseudo-elemento ::after que criava borda azul brilhante */
+/* Apenas as sombras do JavaScript serão aplicadas */
+
+/* Efeito de hover será controlado apenas pelo JavaScript */
+
+/* Estado ativo durante o clique - feedback visual */
+.scroll-down-button:active {
+  animation-play-state: paused;
+  transform: scale(0.95);
+}
+
+/* Estado ativo durante o scroll - indicar que está funcionando */
+.scroll-down-button.scrolling {
+  animation-play-state: paused;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Animação de flutuação para estimular o clique */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Pausar animação no hover para melhor interação */
+.scroll-down-button:hover {
+  animation-play-state: paused;
+}
+
+/* Estilos específicos para o ícone */
+.scroll-down-button .icon-svg {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  transition: transform 0.3s ease;
+}
+
+.scroll-down-button:hover .icon-svg {
   transform: translateY(2px);
-  filter: brightness(1.1);
 }
 
-/* Efeito de iluminação azul para o botão */
-.scroll-button-glow {
-  position: relative;
-}
-
-.scroll-button-glow::before {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  background: radial-gradient(ellipse at center, rgba(60, 120, 255, 0.4) 0%, rgba(60, 120, 255, 0.2) 40%, rgba(60, 120, 255, 0.1) 70%, transparent 90%);
-  border-radius: 50%;
-  filter: blur(4px);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.scroll-button-glow:hover::before {
-  opacity: 1;
-}
-
-/* Animação de bounce personalizada para o botão */
-@keyframes custom-bounce {
-  0%, 20%, 53%, 80%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  40%, 43% {
-    transform: translate3d(0, -8px, 0);
-  }
-  70% {
-    transform: translate3d(0, -4px, 0);
-  }
-  90% {
-    transform: translate3d(0, -2px, 0);
-  }
-}
-
+/* Remover estilos conflitantes antigos */
+.scroll-button-hover,
+.scroll-button-glow,
 .animate-custom-bounce {
-  animation: custom-bounce 2s infinite;
+  /* Estes estilos não são mais utilizados */
+  display: none;
 }
 @layer base {
   * {

@@ -16,7 +16,7 @@ export default function ProspectusLanding() {
         {/* Logo Container - Centralizado */}
         <div className="text-center z-10">
           <img
-            src="/PROSPECTUS_LOGO_OFICIAL_COMPLETO.png"
+            src="/PROSPECTUS_LOGO_OFICIAL_COMPLETO.webp"
             alt="PROSPECTUS Logo"
             className="w-auto h-32 md:h-48 object-contain mx-auto"
           />
@@ -93,7 +93,7 @@ export default function ProspectusLanding() {
               {/* Imagem de Efeito Luz posicionada abaixo do texto */}
               <div className="absolute -bottom-64 -left-64">
                 <img
-                  src="/EFEITO_LUZ.png"
+                  src="/EFEITO_LUZ.webp"
                   alt="Efeito de Luz"
                   className="w-64 h-64 md:w-128 md:h-128 object-contain opacity-80"
                 />
@@ -106,7 +106,7 @@ export default function ProspectusLanding() {
             <div className="relative w-full h-full">
               {/* Imagem da Mulher Astronauta */}
               <img
-                src="/MULHER_ASTRONAUTA.png"
+                src="/MULHER_ASTRONAUTA.webp"
                 alt="Mulher Astronauta"
                 className="w-80 h-96 md:w-128 md:h-[36rem] object-cover"
               />
@@ -452,7 +452,7 @@ export default function ProspectusLanding() {
       <section id="section-9"
         className="min-h-screen flex flex-col items-center justify-center relative bg-contain bg-top bg-no-repeat"
         style={{
-          backgroundImage: `url('/man_world.png')`,
+          backgroundImage: `url('/man_world.webp')`,
         }}
       >
         {/* Gradient Overlay - Preto top para cor da imagem */}
@@ -504,7 +504,7 @@ export default function ProspectusLanding() {
           <div className="flex justify-end px-14">
             <div className="bg-orange-500 px-6 py-2 rounded-lg shadow-lg flex items-center justify-center">
               <img
-                src="/PROSPECTUS_SIGLA.png"
+                src="/PROSPECTUS_SIGLA.webp"
                 alt="PROSPECTUS Sigla"
                 className="h-3 w-auto object-contain"
               />
@@ -516,7 +516,7 @@ export default function ProspectusLanding() {
       {/* Section 11 - Aplicando o Undercut */}
       <section id="section-11" className="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: `url('/grid_banner.png')`,
+          backgroundImage: `url('/grid_banner.webp')`,
         }}>
         <div className="text-center relative z-10">
           <p className="text-lg md:text-3xl text-blue-400 font-archivo font-light leading-none">Aplicando o</p>
@@ -539,7 +539,7 @@ export default function ProspectusLanding() {
       <section id="section-12"
         className="min-h-screen flex flex-col items-center justify-end relative bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/f1.png')`,
+          backgroundImage: `url('/f1.webp')`,
         }}
       >
         <div className="absolute inset-0 bg-black/80"></div>
@@ -576,7 +576,7 @@ export default function ProspectusLanding() {
         {/* Imagem do astronauta à esquerda - mostrando apenas metade */}
         <div className="absolute left-[-20vw] top-0 h-full w-1/2 overflow-hidden">
           <img
-            src="/astronauta.jpeg"
+            src="/astronauta.webp"
             alt="Astronauta"
             className="h-full w-auto object-cover object-right"
           />
@@ -585,7 +585,7 @@ export default function ProspectusLanding() {
         {/* Imagem do planeta à direita - mostrando apenas metade */}
         <div className="absolute right-[-35vw] top-0 h-full w-1/2 overflow-hidden">
           <img
-            src="/planeta.png"
+            src="/planeta.webp"
             alt="Planeta"
             className="h-full w-auto object-cover object-left"
           />
@@ -616,7 +616,7 @@ export default function ProspectusLanding() {
                 {/* Círculo central - sol/núcleo */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full shadow-2xl z-20 flex items-center justify-center">
                   <img 
-                    src="/SOL_ICONE.png" 
+                    src="/SOL_ICONE.webp" 
                     alt="Sol" 
                     className="w-12 h-12 object-contain"
                   />
@@ -632,7 +632,7 @@ export default function ProspectusLanding() {
                   {/* Ícone 1 - órbita externa - Estratégia */}
                   <div className="absolute w-8 h-8 bg-transparent border-2 border-orange-500 rounded-full flex items-center justify-center shadow-lg animate-orbit-1">
                     <img 
-                      src="/ESTACAO_CONTROLE.png" 
+                      src="/ESTACAO_CONTROLE.webp" 
                       alt="Estratégia" 
                       className="w-4 h-4 object-contain"
                     />
@@ -641,7 +641,7 @@ export default function ProspectusLanding() {
                   {/* Ícone 2 - órbita média - Crescimento */}
                   <div className="absolute w-8 h-8 bg-transparent border-2 border-orange-500 rounded-full flex items-center justify-center shadow-lg animate-orbit-2">
                     <img 
-                      src="/NOTE_FOGUETE.png" 
+                      src="/NOTE_FOGUETE.webp" 
                       alt="Crescimento" 
                       className="w-4 h-4 object-contain"
                     />
@@ -650,7 +650,7 @@ export default function ProspectusLanding() {
                   {/* Ícone 3 - órbita interna - Inovação */}
                   <div className="absolute w-8 h-8 bg-transparent border-2 border-orange-500 rounded-full flex items-center justify-center shadow-lg animate-orbit-3">
                     <img 
-                      src="/SATELITE.png" 
+                      src="/SATELITE.webp" 
                       alt="Inovação" 
                       className="w-4 h-4 object-contain"
                     />
@@ -659,7 +659,7 @@ export default function ProspectusLanding() {
                   {/* Ícone 4 - órbita externa direita - Networking */}
                   <div className="absolute w-8 h-8 bg-transparent border-2 border-orange-500 rounded-full flex items-center justify-center shadow-lg animate-orbit-4">
                     <img 
-                      src="/CARRO_ESPACIAL.png" 
+                      src="/CARRO_ESPACIAL.webp" 
                       alt="Networking" 
                       className="w-4 h-4 object-contain"
                     />
@@ -682,7 +682,7 @@ export default function ProspectusLanding() {
             <div 
               className="relative h-98 border border-white bg-cover bg-center overflow-hidden transition-all duration-300 ease-in-out hover:border-orange-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-[1.02] cursor-pointer"
               style={{
-                backgroundImage: `url('/city.jpg')`
+                backgroundImage: `url('/city.webp')`
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -691,7 +691,7 @@ export default function ProspectusLanding() {
                 <div className="flex flex-col items-start space-y-3">
                   <div className="flex justify-start">
                     <img 
-                      src="/SOL_ICONE.png" 
+                      src="/SOL_ICONE.webp" 
                       alt="Planejamento Estratégico" 
                       className="w-6 h-6 object-contain"
                     />
@@ -718,7 +718,7 @@ export default function ProspectusLanding() {
                 <div className="flex flex-col items-start space-y-3">
                   <div className="flex justify-start">
                     <img 
-                      src="/NOTE_FOGUETE.png" 
+                      src="/NOTE_FOGUETE.webp" 
                       alt="Estruturas Digitais" 
                       className="w-6 h-6 object-contain"
                     />
@@ -734,7 +734,7 @@ export default function ProspectusLanding() {
             <div 
               className="relative h-98 border border-white bg-cover bg-center overflow-hidden transition-all duration-300 ease-in-out hover:border-orange-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-[1.02] cursor-pointer"
               style={{
-                backgroundImage: `url('/space-x.jpg')`
+                backgroundImage: `url('/space-x.webp')`
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -743,7 +743,7 @@ export default function ProspectusLanding() {
                 <div className="flex flex-col items-start space-y-3">
                   <div className="flex justify-start">
                     <img 
-                      src="/SATELITE.png" 
+                      src="/SATELITE.webp" 
                       alt="Comunicação Integrada" 
                       className="w-6 h-6 object-contain"
                     />
@@ -772,7 +772,7 @@ export default function ProspectusLanding() {
                   <div className="flex flex-col items-start space-y-3">
                     <div className="flex justify-start">
                       <img 
-                        src="/CARRO_ESPACIAL.png" 
+                        src="/CARRO_ESPACIAL.webp" 
                         alt="Prospecção Qualificada" 
                         className="w-6 h-6 object-contain"
                       />
@@ -791,7 +791,7 @@ export default function ProspectusLanding() {
                   <div className="flex flex-col items-start space-y-3">
                     <div className="flex justify-start">
                       <img 
-                        src="/ESTACAO_CONTROLE.PNG" 
+                        src="/ESTACAO_CONTROLE.webp" 
                         alt="Inteligência de Mercado" 
                         className="w-6 h-6 object-contain"
                       />
@@ -813,7 +813,7 @@ export default function ProspectusLanding() {
       <section id="section-14"
         className="min-h-screen bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-G2ufTXhrzppY5hTtUbJBznj19YYy4N.png')`,
+          backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-G2ufTXhrzppY5hTtUbJBznj19YYy4N.webp')`,
         }}
       >
         <div className="min-h-screen bg-black/40"></div>
@@ -965,7 +965,7 @@ export default function ProspectusLanding() {
           <div className="bg-orange-500 w-32 h-32 flex items-center justify-center shadow-2xl">
             <div className="flex items-center justify-center">
               <img
-                src="/PROSPECTUS_SIGLA.png"
+                src="/PROSPECTUS_SIGLA.webp"
                 alt="PROSPECTUS Sigla"
                 className="w-auto h-6 object-contain"
               />
@@ -1003,7 +1003,7 @@ export default function ProspectusLanding() {
       <section id="section-22"
         className="min-h-[60vh] relative bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/sol.png')`,
+          backgroundImage: `url('/sol.webp')`,
         }}
       >
         {/* Gradient Overlay - Preto top para cor da imagem */}
@@ -1051,7 +1051,7 @@ export default function ProspectusLanding() {
             <div className="flex justify-center">
               <div className="text-center z-10">
                 <img
-                  src="/PROSPECTUS_LOGO_OFICIAL_COMPLETO.png"
+                  src="/PROSPECTUS_LOGO_OFICIAL_COMPLETO.webp"
                   alt="PROSPECTUS Logo"
                   className="w-auto h-6 md:h-8 object-contain mx-auto"
                 />
