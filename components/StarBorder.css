@@ -36,8 +36,35 @@
     font-size: 16px;
     font-family: 'Venus Rising', sans-serif;
     text-align: center;
-    padding: 16px 250px;
+    /* Responsive padding instead of fixed 250px */
+    padding: 16px 20px;
+    min-width: 160px;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Media queries for responsive sizing */
+  @media (min-width: 640px) {
+    .inner-content {
+      padding: 16px 40px;
+      min-width: 200px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .inner-content {
+      padding: 16px 60px;
+      min-width: 240px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .inner-content {
+      padding: 16px 80px;
+      min-width: 280px;
+    }
   }
   
   @keyframes star-movement-bottom {
@@ -61,4 +88,3 @@
       opacity: 0;
     }
   }
-  
