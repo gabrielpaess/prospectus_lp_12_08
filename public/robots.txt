@@ -1,0 +1,3 @@
+# https://https://prospectusnbn.com.br/index.html
+User-agent: *
+Allow: /

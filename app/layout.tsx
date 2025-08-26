@@ -6,7 +6,6 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Prospectus Landing Page',
   description: 'Landing page for Prospectus',
-  generator: 'v0.dev',
 }
 
 export default function RootLayout({
@@ -17,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

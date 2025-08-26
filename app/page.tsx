@@ -18,7 +18,7 @@ export default function ProspectusLanding() {
           <img
             src="/PROSPECTUS_LOGO_OFICIAL_COMPLETO.webp"
             alt="PROSPECTUS Logo"
-            className="w-auto h-12 sm:h-16 md:h-20 lg:h-32 xl:h-40 object-contain mx-auto"
+            className="w-auto h-10 sm:h-16 md:h-20 lg:h-32 xl:h-40 object-contain mx-auto"
           />
         </div>
 
@@ -38,7 +38,7 @@ export default function ProspectusLanding() {
       {/* Section 2 */}
       <section id="section-2" className="min-h-screen flex items-center justify-center bg-black">
         <div className="text-center">
-          <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-5xl font-bold text-[#055ec4] px-8 font-venus">
+          <h2 className="text-md sm:text-2xl md:text-2xl lg:text-2xl xl:text-5xl font-bold text-[#055ec4] px-8 font-venus">
             <TypewriterText
               text="[SUA EMPRESA NÃO PRECISA DE MAIS ESFORÇO]"
               speed={80}
@@ -63,7 +63,7 @@ export default function ProspectusLanding() {
             stagger={150}
             staggerChildren={true}
           >
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-[140px] font-bold text-[#e3532c] leading-none sm:leading-none md:leading-none lg:leading-none xl:leading-none 2xl:leading-[105px] font-archivo">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-[140px] font-bold text-[#e3532c] leading-none sm:leading-none md:leading-none lg:leading-none xl:leading-none 2xl:leading-[105px] font-archivo">
               <div>PRECISA DE</div>
               <div>ESTRUTURA</div>
               <div>PARA CRESCER</div>
@@ -167,7 +167,7 @@ export default function ProspectusLanding() {
       {/* Section 6 */}
       <section id="section-6" className="min-h-screen flex items-center justify-center bg-black">
         <div className="text-center">
-          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-regular text-[#055ec4] leading-none px-8 font-venus animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
+          <h2 className="text-base text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-regular text-[#055ec4] leading-none px-6 font-venus animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
             animation: 'scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
             transformOrigin: '50% 100%'
           }}>
@@ -617,7 +617,7 @@ export default function ProspectusLanding() {
       {/* Section 8 */}
       <section id="section-8" className="min-h-screen flex items-center justify-center bg-black">
         <div className="text-center">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-3xl font-regular text-[#055ec4] font-venus">
+          <h2 className="text-sm sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-3xl font-regular text-[#055ec4] font-venus">
             <TypewriterText
               text="[NÃO OFERTAMOS SERVIÇOS]"
               speed={60}
@@ -1209,7 +1209,7 @@ export default function ProspectusLanding() {
       {/* Section 23 - Final CTA */}
       <section id="section-23" className="min-h-screen flex flex-col items-center justify-center relative bg-black">
         <div className="relative z-10 text-center space-y-8 px-8">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-regular text-[#e5c998] leading-none font-venus animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
+          <h2 className="text-sm sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-regular text-[#e5c998] leading-none font-venus animate-[scale-up-bottom_0.4s_cubic-bezier(0.390,0.575,0.565,1.000)_both] origin-bottom" style={{
             animation: 'scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
             transformOrigin: '50% 100%'
           }}>
@@ -1219,7 +1219,7 @@ export default function ProspectusLanding() {
             COM INTELIGÊNCIA
           </h2>
 
-          <p className="text-sm md:text-xl text-white font-extralight max-w-7xl mx-8 leading-none">
+          <p className="text-sm md:text-xl text-white font-extralight max-w-7xl mx-2 sm:mx-8 leading-none">
             A <span className="font-medium">Prospectus NBN</span> é um ecossistema de crescimento <br />
             com inteligência aplicada, para líderes que <br />
             não aceitam mais desperdiçar oportunidades.

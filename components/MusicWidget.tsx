@@ -10,7 +10,7 @@ interface MusicWidgetProps {
 
 export default function MusicWidget({ audioSrc, className = '' }: MusicWidgetProps) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(0.10);
   const [isVisible, setIsVisible] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
 
