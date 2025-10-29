@@ -1267,7 +1267,7 @@ export default function ProspectusLanding() {
 
       {/* Music Widget */}
       <MusicWidget
-        audioSrc="/background-music.mp3"
+        audioSrc="https://oayc6f7vvtulgc90.public.blob.vercel-storage.com/background-music.mp3"
         className="hidden md:block"
       />
 
