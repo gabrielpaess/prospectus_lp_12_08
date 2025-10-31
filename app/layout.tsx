@@ -105,6 +105,28 @@ export default function RootLayout({
           }}
         />
         
+        {/* Google Ads Conversion Function */}
+        <Script
+          id="google-ads-conversion"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17686151151/wPK4CLD_r7cbEO__tPFB',
+                    'event_callback': callback
+                });
+                return false;
+              }
+            `,
+          }}
+        />
+        
         {children}
       </body>
     </html>

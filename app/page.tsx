@@ -1,3 +1,5 @@
+'use client';
+
 import ScrollDownButton from "../components/ScrollDownButton";
 import TypewriterText from '../components/TypewriterText';
 import ReactBitsScrollReveal from '../components/ReactBitsScrollReveal';
@@ -7,6 +9,13 @@ import Cursor3DLens from '../components/Cursor3DLens';
 import ShinyText from '../components/ShinyText';
 import StarBorder from '../components/StarBorder';
 import MusicWidget from "@/components/MusicWidget";
+
+// Declare global function for TypeScript
+declare global {
+  interface Window {
+    gtag_report_conversion?: (url?: string) => boolean;
+  }
+}
 
 export default function ProspectusLanding() {
   return (
@@ -1231,6 +1240,13 @@ export default function ProspectusLanding() {
     href={`https://wa.me/5551997766970?text=${encodeURIComponent('Olá. Quero saber mais sobre os serviços da Prospectus NBN.')}`}
     target="_blank"
     rel="noopener noreferrer"
+    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+      const url = `https://wa.me/5551997766970?text=${encodeURIComponent('Olá. Quero saber mais sobre os serviços da Prospectus NBN.')}`;
+      if (window.gtag_report_conversion) {
+        window.gtag_report_conversion(url);
+        e.preventDefault();
+      }
+    }}
     className="
       inline-block
       min-w-[200px] max-w-[280px] w-auto
