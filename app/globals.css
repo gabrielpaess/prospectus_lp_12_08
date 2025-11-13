@@ -368,3 +368,96 @@ html {
   display: none;
 }
 
+/* ============================================
+   ESTILOS PERSONALIZADOS DA BARRA DE ROLAGEM
+   Compatível com todos os navegadores
+   ============================================ */
+
+/* Firefox - scrollbar-width e scrollbar-color */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #055ec4 #000000;
+}
+
+/* WebKit (Chrome, Safari, Edge, Opera) - ::-webkit-scrollbar */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000;
+  border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #055ec4;
+  border-radius: 6px;
+  border: 2px solid #000000;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #0449a0;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #033d85;
+}
+
+/* Para elementos com scroll horizontal */
+*::-webkit-scrollbar:horizontal {
+  height: 12px;
+}
+
+/* Para elementos com scroll vertical */
+*::-webkit-scrollbar:vertical {
+  width: 12px;
+}
+
+/* Estilos específicos para o elemento html/body */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #055ec4 #000000;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #055ec4;
+  border-radius: 6px;
+  border: 2px solid #000000;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #0449a0;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #055ec4 #000000;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #055ec4;
+  border-radius: 6px;
+  border: 2px solid #000000;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #0449a0;
+}
+
